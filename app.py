@@ -17,8 +17,11 @@ uploaded_file = st.file_uploader(
 if uploaded_file is not None:
     image_data = uploaded_file.getvalue()
 
-    if not image_data.startswith(b"\x89PNG\r\n\x1a\n"):
-        st.error("正しいPNGファイルをアップロードしてください。")
+is_png = image_data.startswith(b"\x89PNG\r\n\x1a\n")
+is_jpeg = image_data.startswith(b"\xff\xd8\xff")
+
+if not (is_png or is_jpeg):
+    st.error("正しいPNGまたはJPG画像をアップロードしてください。")
     else:
         st.success("画像のアップロードが完了しました。")
 
