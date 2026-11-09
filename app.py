@@ -35,5 +35,5 @@ if not (is_png or is_jpeg):
             label="PNG画像をダウンロード",
             data=image_data,
             file_name=uploaded_file.name,
-            mime="image/png"
+            mime=uploaded_file.type
         )
