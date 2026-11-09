@@ -11,7 +11,7 @@ st.write("PNG画像をアップロードして、ダウンロードできます�
 
 uploaded_file = st.file_uploader(
     "PNG画像を選択してください",
-    type=["png"]
+    type=["png", "jpg", "jpeg"]
 )
 
 if uploaded_file is not None:
